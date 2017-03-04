@@ -1,9 +1,0 @@
-C:\src\git\Interview\Interview\Tests\bin\Debug\Tests.dll
-C:\src\git\Interview\Interview\Tests\bin\Debug\Tests.pdb
-C:\src\git\Interview\Interview\Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
-C:\src\git\Interview\Interview\Tests\bin\Debug\Random.dll
-C:\src\git\Interview\Interview\Tests\bin\Debug\Random.pdb
-C:\src\git\Interview\Interview\Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
-C:\src\git\Interview\Interview\Tests\obj\Debug\Tests.csprojResolveAssemblyReference.cache
-C:\src\git\Interview\Interview\Tests\obj\Debug\Tests.dll
-C:\src\git\Interview\Interview\Tests\obj\Debug\Tests.pdb
