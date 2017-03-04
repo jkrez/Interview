@@ -1,0 +1,5 @@
+C:\src\git\Interview\Interview\Random\bin\Debug\Random.dll
+C:\src\git\Interview\Interview\Random\bin\Debug\Random.pdb
+C:\src\git\Interview\Interview\Random\obj\Debug\Random.csprojResolveAssemblyReference.cache
+C:\src\git\Interview\Interview\Random\obj\Debug\Random.dll
+C:\src\git\Interview\Interview\Random\obj\Debug\Random.pdb
