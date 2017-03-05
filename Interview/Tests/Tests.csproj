@@ -50,13 +50,13 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="AtLeastOneDuplicateTests.cs" />
+    <Compile Include="Extra\AtLeastOneDuplicateTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Random\Random.csproj">
+    <ProjectReference Include="..\Random\Questions.csproj">
       <Project>{501369a0-160c-48a8-ae90-de0f7394aca6}</Project>
-      <Name>Random</Name>
+      <Name>Questions</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>
