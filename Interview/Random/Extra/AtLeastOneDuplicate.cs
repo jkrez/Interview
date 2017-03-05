@@ -1,10 +1,10 @@
-﻿namespace Random.Code
+﻿namespace Random.Extra
 {
     using System.Collections.Generic;
 
     public static class AtLeastOneDuplicate
     {
-        //xO(n log (n)) tsime, O(1) space solution
+        // O(n log (n)) tsime, O(1) space solution
         public static int ReturnDuplicateO1Space(List<int> list)
         {
             return ReturnDuplicateHelper(list, 1, list.Count);

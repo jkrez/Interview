@@ -1,9 +1,8 @@
-﻿namespace Tests
+﻿namespace Tests.Extra
 {
     using System.Collections.Generic;
-
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using Random.Code;
+    using Random.Extra;
 
     [TestClass]
     public class AtLeastOneDuplicateTests
