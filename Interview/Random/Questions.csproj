@@ -40,12 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="cracking-the-coding-interview\Chapter 1\Question_1_1.cs" />
     <Compile Include="Extra\AtLeastOneDuplicate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Chapter 1\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="stylecop.json" />
