@@ -52,17 +52,16 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="craking-the-coding-interview\Chapter 1\Test_1_1.cs" />
+    <Compile Include="Cracking the coding interview\Chapter 1\Test_1_1.cs" />
     <Compile Include="Extra\AtLeastOneDuplicateTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Random\Questions.csproj">
+    <ProjectReference Include="..\Questions\Questions.csproj">
       <Project>{501369a0-160c-48a8-ae90-de0f7394aca6}</Project>
       <Name>Questions</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>

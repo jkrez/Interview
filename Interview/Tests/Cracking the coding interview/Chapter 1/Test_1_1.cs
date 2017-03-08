@@ -1,7 +1,7 @@
-﻿namespace Tests.Cracking_the_Code.Chapter_1
+﻿namespace Tests.Cracking_the_coding_interview.Chapter_1
 {
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using Random.Cracking_the_Code.Chapter_1;
+    using Questions.Cracking_the_coding_interview.Chapter_1;
 
     [TestClass]
     public class Test_1_1

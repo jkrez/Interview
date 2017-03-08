@@ -2,7 +2,7 @@
 {
     using System.Collections.Generic;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using Random.Extra;
+    using Questions.Extra;
 
     [TestClass]
     public class AtLeastOneDuplicateTests
