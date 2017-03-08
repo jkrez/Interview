@@ -7,8 +7,8 @@
     <ProjectGuid>{501369A0-160C-48A8-AE90-DE0F7394ACA6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Random</RootNamespace>
-    <AssemblyName>Random</AssemblyName>
+    <RootNamespace>Questions</RootNamespace>
+    <AssemblyName>Questions</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

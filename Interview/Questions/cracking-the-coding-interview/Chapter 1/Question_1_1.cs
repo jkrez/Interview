@@ -1,4 +1,4 @@
-﻿namespace Random.Cracking_the_Code.Chapter_1
+﻿namespace Questions.Cracking_the_Code.Chapter_1
 {
     using System;
     using System.Collections.Generic;

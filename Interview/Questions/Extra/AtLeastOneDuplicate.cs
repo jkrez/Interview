@@ -1,4 +1,4 @@
-﻿namespace Random.Extra
+﻿namespace Questions.Extra
 {
     using System.Collections.Generic;
 
