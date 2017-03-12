@@ -5,7 +5,7 @@
     using Questions.Extra;
 
     [TestClass]
-    public class AtLeastOneDuplicateTests
+    public class Test_AtLeastOneDuplicate
     {
 
         public delegate int ReturnDuplicate(List<int> list);

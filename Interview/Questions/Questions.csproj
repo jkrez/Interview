@@ -43,6 +43,7 @@
     <Compile Include="Cracking the coding interview\Chapter 1\Question_1_1.cs" />
     <Compile Include="Cracking the coding interview\Chapter 1\Question_1_2.cs" />
     <Compile Include="Extra\AtLeastOneDuplicate.cs" />
+    <Compile Include="Extra\ReverseString.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
