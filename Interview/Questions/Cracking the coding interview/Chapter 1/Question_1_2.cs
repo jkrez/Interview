@@ -1,29 +1,59 @@
 ﻿namespace Questions.Cracking_the_coding_interview.Chapter_1
 {
+    using System.Collections;
+    using System.Collections.Generic;
+
     /// <summary>
-    /// Implement a function void reverse(char* str) in C or C++
-    /// which reverses a nullterminated string.
+    /// Given two strings, write a method to decide if one is a permutation of the other. 
     /// </summary>
     public class Question_1_2
     {
 
-        public static string Reverse(string s)
+        public static bool AreStringsPermutationsDict(string s1, string s2)
         {
-            if (s == null)
+            if (s1 == null || s2 == null)
             {
-                return null;
+                return s1 == s2;
             }
 
-            var array = s.ToCharArray();
-
-            for (int i = 0, j = array.Length - 1; i < j; i++, j--)
+            if (s1.Length != s2.Length)
             {
-                var temp = array[i];
-                array[i] = array[j];
-                array[j] = temp;
+                return false;
             }
 
-            return new string(array);
+            Dictionary<char, int> dict = new Dictionary<char, int>();
+            foreach (var c in s1)
+            {
+                if (dict.ContainsKey(c))
+                {
+                    dict[c] = dict[c]++;
+                }
+                else
+                {
+                    dict.Add(c, 1);
+                }
+            }
+
+            foreach (var c in s2)
+            {
+                int value;
+                if (dict.TryGetValue(c, out value))
+                {
+                    value--;
+                    if (value < 0)
+                    {
+                        return false;
+                    }
+
+                    dict[c] = value;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
     }
 }

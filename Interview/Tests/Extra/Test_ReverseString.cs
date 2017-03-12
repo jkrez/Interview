@@ -14,9 +14,9 @@
             var s2 = "abcd";
             var s3 = "this is a really long string";
 
-            Assert.AreEqual(new string(s1.Reverse().ToArray()), Question_1_2.Reverse(s1));
-            Assert.AreEqual(new string(s2.Reverse().ToArray()), Question_1_2.Reverse(s2));
-            Assert.AreEqual(new string(s3.Reverse().ToArray()), Question_1_2.Reverse(s3));
+            Assert.AreEqual(new string(s1.Reverse().ToArray()), ReverseString.Reverse(s1));
+            Assert.AreEqual(new string(s2.Reverse().ToArray()), ReverseString.Reverse(s2));
+            Assert.AreEqual(new string(s3.Reverse().ToArray()), ReverseString.Reverse(s3));
         }
 
         [TestMethod]
@@ -26,9 +26,9 @@
             var s2 = (string) null;
             var s3 = "a";
 
-            Assert.AreEqual(new string(s1.Reverse().ToArray()), Question_1_2.Reverse(s1));
-            Assert.AreEqual(null, Question_1_2.Reverse(s2));
-            Assert.AreEqual(new string(s3.Reverse().ToArray()), Question_1_2.Reverse(s3));
+            Assert.AreEqual(new string(s1.Reverse().ToArray()), ReverseString.Reverse(s1));
+            Assert.AreEqual(null, ReverseString.Reverse(s2));
+            Assert.AreEqual(new string(s3.Reverse().ToArray()), ReverseString.Reverse(s3));
         }
     }
 }
