@@ -54,6 +54,8 @@
   <ItemGroup>
     <Compile Include="Cracking the coding interview\Chapter 1\Test_1_1.cs" />
     <Compile Include="Cracking the coding interview\Chapter 1\Test_1_2.cs" />
+    <Compile Include="Cracking the coding interview\Chapter 1\Test_1_3.cs" />
+    <Compile Include="TestHelpers.cs" />
     <Compile Include="Extra\Test_AtLeastOneDuplicate.cs" />
     <Compile Include="Extra\Test_ReverseString.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
