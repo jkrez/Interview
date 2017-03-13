@@ -11,7 +11,7 @@
     {
 
         // Time: O(1)
-        // Space: O(N)
+        // Space: O(n)
         public static bool AllUniqueCharactersHash(string s)
         {
             if (s == null)
