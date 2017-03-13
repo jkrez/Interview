@@ -20,7 +20,7 @@
             }
 
             var order1 = string.Concat(s1.OrderBy(c => c));
-            var order2 = string.Concat(s1.OrderBy(c => c));
+            var order2 = string.Concat(s2.OrderBy(c => c));
 
             return order1.Equals(order2);
         }
