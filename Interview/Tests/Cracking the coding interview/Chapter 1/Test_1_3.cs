@@ -17,7 +17,7 @@
         public void Question_1_3_BasicTests()
         {
             // No spaces
-            this.ValidateResult("abc", "acb");
+            this.ValidateResult("abc", "abc");
 
             // Some spaces
             this.ValidateResult("a b c", "a%20b%20c");
