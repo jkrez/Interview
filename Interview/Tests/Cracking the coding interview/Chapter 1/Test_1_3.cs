@@ -20,7 +20,7 @@
             this.ValidateResult("abc", "abc");
 
             // Some spaces
-            this.ValidateResult("a b c", "a%20b%20c");
+            this.ValidateResult("a%20b%20c", "a b c");
         }
 
         [TestMethod]
