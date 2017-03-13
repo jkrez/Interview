@@ -8,7 +8,7 @@
     public class Test_ReverseString
     {
         [TestMethod]
-        public void ReverseString_Basic()
+        public void Extra_ReverseString_Basic()
         {
             var s1 = "abc";
             var s2 = "abcd";
@@ -20,7 +20,7 @@
         }
 
         [TestMethod]
-        public void ReverseString_EdgeCases()
+        public void Extra_ReverseString_EdgeCases()
         {
             var s1 = string.Empty;
             var s2 = (string) null;

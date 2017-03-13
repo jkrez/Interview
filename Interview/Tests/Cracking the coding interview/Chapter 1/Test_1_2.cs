@@ -22,6 +22,11 @@
             var s2 = "cbb";
 
             Assert.AreEqual(false, Question_1_2.AreStringsPermutationsDict(s1, s2));
+
+            s1 = "aa";
+            s2 = "aaa";
+
+            Assert.AreEqual(false, Question_1_2.AreStringsPermutationsDict(s1, s2));
         }
 
         [TestMethod]
@@ -52,6 +57,11 @@
 
             s1 = string.Empty;
             s2 = string.Empty;
+
+            Assert.AreEqual(true, Question_1_2.AreStringsPermutationsDict(s1, s2));
+
+            s1 = "a";
+            s2 = "a";
 
             Assert.AreEqual(true, Question_1_2.AreStringsPermutationsDict(s1, s2));
         }
