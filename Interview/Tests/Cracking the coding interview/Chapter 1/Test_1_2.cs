@@ -13,6 +13,7 @@
             var s2 = "cba";
 
             Assert.AreEqual(true, Question_1_2.AreStringsPermutationsDict(s1, s2));
+            Assert.AreEqual(true, Question_1_2.AreStringsPermutationsSort(s1, s2));
         }
 
         [TestMethod]
@@ -22,11 +23,13 @@
             var s2 = "cbb";
 
             Assert.AreEqual(false, Question_1_2.AreStringsPermutationsDict(s1, s2));
+            Assert.AreEqual(false, Question_1_2.AreStringsPermutationsSort(s1, s2));
 
             s1 = "aa";
             s2 = "aaa";
 
             Assert.AreEqual(false, Question_1_2.AreStringsPermutationsDict(s1, s2));
+            Assert.AreEqual(false, Question_1_2.AreStringsPermutationsSort(s1, s2));
         }
 
         [TestMethod]
@@ -36,6 +39,7 @@
             var s2 = "cb";
 
             Assert.AreEqual(false, Question_1_2.AreStringsPermutationsDict(s1, s2));
+            Assert.AreEqual(false, Question_1_2.AreStringsPermutationsSort(s1, s2));
         }
 
         [TestMethod]
@@ -45,6 +49,7 @@
             var s2 = string.Empty;
 
             Assert.AreEqual(false, Question_1_2.AreStringsPermutationsDict(s1, s2));
+            Assert.AreEqual(false, Question_1_2.AreStringsPermutationsSort(s1, s2));
         }
 
         [TestMethod]
@@ -54,16 +59,19 @@
             var s2 = (string)null;
 
             Assert.AreEqual(true, Question_1_2.AreStringsPermutationsDict(s1, s2));
+            Assert.AreEqual(true, Question_1_2.AreStringsPermutationsSort(s1, s2));
 
             s1 = string.Empty;
             s2 = string.Empty;
 
             Assert.AreEqual(true, Question_1_2.AreStringsPermutationsDict(s1, s2));
+            Assert.AreEqual(true, Question_1_2.AreStringsPermutationsSort(s1, s2));
 
             s1 = "a";
             s2 = "a";
 
             Assert.AreEqual(true, Question_1_2.AreStringsPermutationsDict(s1, s2));
+            Assert.AreEqual(true, Question_1_2.AreStringsPermutationsSort(s1, s2));
         }
     }
 }
