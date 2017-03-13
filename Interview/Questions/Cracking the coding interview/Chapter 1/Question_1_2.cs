@@ -9,6 +9,9 @@
     /// </summary>
     public class Question_1_2
     {
+
+        // Time: O(n log n)
+        // Space: O(1)
         public static bool AreStringsPermutationsSort(string s1, string s2)
         {
             if (s1 == null || s2 == null)
@@ -22,6 +25,8 @@
             return order1.Equals(order2);
         }
 
+        // Time: O(n)
+        // Space: O(n)
         public static bool AreStringsPermutationsDict(string s1, string s2)
         {
             if (s1 == null || s2 == null)
