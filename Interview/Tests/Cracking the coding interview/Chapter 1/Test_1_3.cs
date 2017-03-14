@@ -37,6 +37,7 @@
         public void Question_1_3_InPlace_BasicTests()
         {
             this.ValidateResultInPlace("%20abc"," abc  ");
+            this.ValidateResultInPlace("a","a");
             this.ValidateResultInPlace("%20","   ", 1);
             this.ValidateResultInPlace("a%20%20b","a  b    ");
         }
