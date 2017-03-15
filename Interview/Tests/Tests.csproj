@@ -56,6 +56,7 @@
     <Compile Include="Cracking the coding interview\Chapter 1\Test_1_2.cs" />
     <Compile Include="Cracking the coding interview\Chapter 1\Test_1_3.cs" />
     <Compile Include="Cracking the coding interview\Chapter 1\Test_1_4.cs" />
+    <Compile Include="Cracking the coding interview\Chapter 1\Test_1_5.cs" />
     <Compile Include="TestHelpers.cs" />
     <Compile Include="Extra\Test_AtLeastOneDuplicate.cs" />
     <Compile Include="Extra\Test_ReverseString.cs" />
