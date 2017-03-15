@@ -1,5 +1,6 @@
 ﻿namespace Tests.Cracking_the_coding_interview.Chapter_1
 {
+    using System;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Questions.Cracking_the_coding_interview.Chapter_1;
 
@@ -14,6 +15,10 @@
             this.ValidateResult("abc def", false);
             this.ValidateResult("abc abc", true);
             this.ValidateResult("abca bc", true);
+            this.ValidateResult("aba", true);
+            this.ValidateResult("aabb", true);
+            this.ValidateResult("aaabbbb", true);
+            this.ValidateResult("aaabbb", false);
         }
 
         [TestMethod]
@@ -21,13 +26,29 @@
         {
             this.ValidateResult("a", true);
             this.ValidateResult("a ", true);
-            this.ValidateResult("", false);
-            this.ValidateResult(" ", false);
+            this.ValidateResult("", true);
+            this.ValidateResult(" ", true);
+        }
+
+        [TestMethod]
+        public void Test_1_4_FastSolution_InvalidInput()
+        {
+            TestHelpers.AssertExceptionThrown(() => this.ValidateResult("!", false), typeof(ArgumentException));
+            TestHelpers.AssertExceptionThrown(() => this.ValidateResult("\t", false), typeof(ArgumentException));
+            TestHelpers.AssertExceptionThrown(() => this.ValidateResult(null, false), typeof(ArgumentException));
         }
 
         private void ValidateResult(string s, bool expected)
         {
-            Assert.AreEqual(expected, Question_1_4.IsPalindromePermutation(s));
+            Assert.AreEqual(
+                expected, 
+                Question_1_4.IsPalindromePermutationFast(s),
+                $"IsPalindromePermutationFast failed with {s}");
+
+            Assert.AreEqual(
+                expected, 
+                Question_1_4.IsPalinromePermutationMinSpace(s),
+                $"IsPalinromePermutationMinSpace failed with {s}");
         }
     }
 }
