@@ -1,6 +1,8 @@
 ﻿namespace Questions.Cracking_the_coding_interview.Chapter_1
 {
+    using System;
     using System.Collections.Generic;
+    using System.Diagnostics;
     using System.Text;
 
     /// <summary>
@@ -14,6 +16,12 @@
     {
         public static string CompressString(string s)
         {
+
+            if (string.IsNullOrWhiteSpace(s))
+            {
+                throw new ArgumentException(nameof(s));
+            }
+
             var sb = new StringBuilder();
             for (var i = 0; i < s.Length;)
             {
