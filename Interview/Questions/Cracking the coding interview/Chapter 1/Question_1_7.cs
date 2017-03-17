@@ -20,7 +20,7 @@
                     var x1 = i + x;
                     var y1 = x;
                     var x2 = image.Length - x;
-                    var y2 = i + x;
+                    var y2 = x1;
                     var x3 = image.Length - x - i;
                     var y3 = x2;
                     var x4 = x;
