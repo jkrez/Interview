@@ -9,7 +9,7 @@
     {
 
         [TestMethod]
-        public void Test_1_4_FastSolution_Basic()
+        public void Question_1_4_FastSolution_Basic()
         {
             this.ValidateResult("abc", false);
             this.ValidateResult("abc def", false);
@@ -22,7 +22,7 @@
         }
 
         [TestMethod]
-        public void Test_1_4_FastSolution_EdgeCases()
+        public void Question_1_4_FastSolution_EdgeCases()
         {
             this.ValidateResult("a", true);
             this.ValidateResult("a ", true);
@@ -31,7 +31,7 @@
         }
 
         [TestMethod]
-        public void Test_1_4_FastSolution_InvalidInput()
+        public void Question_1_4_FastSolution_InvalidInput()
         {
             TestHelpers.AssertExceptionThrown(() => this.ValidateResult("!", false), typeof(ArgumentException));
             TestHelpers.AssertExceptionThrown(() => this.ValidateResult("\t", false), typeof(ArgumentException));

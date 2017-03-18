@@ -2,6 +2,7 @@
 {
     using System;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using Questions;
 
     public static class TestHelpers
     {
@@ -29,6 +30,11 @@
             }
 
             Assert.Fail("No exception thrown");
+        }
+
+        public static void AssertMatricesEqual<T>(T[,] m1, T[,] m2, string msg = "")
+        {
+            Assert.IsTrue(m1.ContentsEqual(m2), msg);
         }
     }
 }

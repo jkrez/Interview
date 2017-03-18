@@ -8,7 +8,7 @@
     public class Test_1_6
     {
         [TestMethod]
-        public void Test_1_6_Basic()
+        public void Question_1_6Basic()
         {
             Assert.AreEqual("abbb", Question_1_6.CompressString("abbb"));
             Assert.AreEqual("a1b4", Question_1_6.CompressString("abbbb"));
@@ -17,14 +17,14 @@
         }
 
         [TestMethod]
-        public void Test_1_6_EdgeCases()
+        public void Question_1_6EdgeCases()
         {
             Assert.AreEqual("ab", Question_1_6.CompressString("ab"));
             Assert.AreEqual("a", Question_1_6.CompressString("a"));
         }
 
         [TestMethod]
-        public void Test_1_6_EdgeCas()
+        public void Question_1_6EdgeCas()
         {
             TestHelpers.AssertExceptionThrown(() => Question_1_6.CompressString(""), typeof(ArgumentException));
             TestHelpers.AssertExceptionThrown(() => Question_1_6.CompressString(null), typeof(ArgumentException));
