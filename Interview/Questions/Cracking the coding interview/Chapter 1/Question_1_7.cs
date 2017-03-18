@@ -23,36 +23,30 @@
             var imageLength = image.GetLength(0);
             for (var x = 0; x < imageLength / 2; x++)
             {
+                // Matrix quadrants:
+                // 1 2
+                // 4 3
                 var edgeLength = imageLength - (2 * x) - 1;
                 for (var i = 0; i < edgeLength; i++)
                 {
-                    var x1 = x + i;
-                    var y1 = x;
-                    var x2 = imageLength - 1 - x;
-                    var y2 = x1;
-                    var x3 = imageLength - 1 - x - i;
-                    var y3 = x2;
-                    var x4 = x;
-                    var y4 = x3;
-                    FourWaySwap(image, x1, y1, x2, y2, x3, y3, x4, y4);
+                    var row1 = x;
+                    var col1 = x + i;
+                    var row2 = x + i;
+                    var col2 = imageLength - 1 - x;
+                    var row3 = imageLength - 1 - x;
+                    var col3 = imageLength - 1 - x - i;
+                    var row4 = imageLength - 1 - x - i;
+                    var col4 = x;
+
+                    var orig = image[row1, col1];
+                    image[row1, col1] = image[row4, col4];
+                    image[row4, col4] = image[row3, col3];
+                    image[row3, col3] = image[row2, col2];
+                    image[row2, col2] = orig;
                 }
             }
 
             return image;
-        }
-
-        private static void FourWaySwap(char[,] matrix, int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4)
-        {
-            Swap(matrix, x1, y1, x2, y2);
-            Swap(matrix, x3, y3, x4, y4);
-            Swap(matrix, x3, y3, x1, y1);
-        }
-
-        private static void Swap(char[,] matrix, int x1, int y1, int x2, int y2)
-        {
-            var temp = matrix[x1, y1];
-            matrix[x1, y1] = matrix[x2, y2];
-            matrix[x2, y2] = temp;
         }
     }
 }
