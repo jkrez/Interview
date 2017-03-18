@@ -10,6 +10,8 @@
     /// </summary>
     public class Question_1_7
     {
+        // Time: O(n)
+        // Spcae: O(1)
         public static char[,] Rotate(char[,] image)
         {
             if (image == null)
