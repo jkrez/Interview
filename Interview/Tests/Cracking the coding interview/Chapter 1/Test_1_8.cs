@@ -12,7 +12,7 @@
         [TestMethod]
         public void Question_1_8_Basic()
         {
-            // Zero in the middle
+            // Zero in the middle.
             // 1 1 1
             // 1 0 1
             // 1 1 1
@@ -20,7 +20,7 @@
             var expected = MatrixHelpers.CreateTwoDimensionalMatrix(3, 3, 1, 0, 1, 0, 0, 0, 1, 0, 1);
             this.ValidateResult(expected, matrix);
 
-            // Zero in the middle
+            // No zeros.
             // 1 1 1
             // 1 1 1
             // 1 1 1
@@ -28,13 +28,20 @@
             var expected2 = MatrixHelpers.CreateTwoDimensionalMatrix(3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1);
             this.ValidateResult(expected2, matrix2);
 
-            // Zero in the middle
+            // Zero on edge.
             // 0 1 1 1
             // 1 1 1 1
             // 1 1 1 1
             var matrix3 = MatrixHelpers.CreateTwoDimensionalMatrix(3, 4, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
             var expected3 = MatrixHelpers.CreateTwoDimensionalMatrix(3, 4, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1);
             this.ValidateResult(expected3, matrix3);
+
+            // Zero everything
+            // 0 1
+            // 0 1
+            var matrix4 = MatrixHelpers.CreateTwoDimensionalMatrix(2, 2, 0, 1, 0, 1);
+            var expected4 = MatrixHelpers.CreateTwoDimensionalMatrix(2, 2, 0, 0, 0, 0);
+            this.ValidateResult(expected4, matrix4);
         }
 
         [TestMethod]
@@ -61,7 +68,6 @@
             TestHelpers.AssertMatricesEqual(expected, input);
             Question_1_8.PropogateZerosInPlace(inputCopy);
             TestHelpers.AssertMatricesEqual(expected, inputCopy);
-
         }
     }
 }
