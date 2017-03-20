@@ -49,6 +49,7 @@
     <Compile Include="Cracking the coding interview\Chapter 1\Question_1_7.cs" />
     <Compile Include="Cracking the coding interview\Chapter 1\Question_1_8.cs" />
     <Compile Include="Cracking the coding interview\Chapter 1\Question_1_9.cs" />
+    <Compile Include="Data structures\Node.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="Extra\AtLeastOneDuplicate.cs" />
     <Compile Include="Extra\ReverseString.cs" />
