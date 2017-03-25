@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Runtime.Remoting.Messaging;
     using Questions.Data_structures;
 
     /// <summary>
@@ -13,33 +14,63 @@
     {
         // Time: O(n)
         // Space: O(n)
-        public static Node<T> RemoveDuplicates<T>(Node<T> head)
+        public static void RemoveDuplicates<T>(Node<T> head)
             where T : IEquatable<T>
         {
-            HashSet<T> nodes = new HashSet<T>();
-            Node<T> noDuplicates = null;
+            if (head == null)
+            {
+                throw new ArgumentNullException(nameof(head));
+            }
 
+            HashSet<T> nodes = new HashSet<T>();
+            nodes.Add(head.Data);
+            while (head.Next != null)
+            {
+                if (!nodes.Contains(head.Next.Data))
+                {
+                    nodes.Add(head.Next.Data);
+                    head = head.Next;
+                }
+                else
+                {
+                    head.Next = head.Next.Next;
+                }
+            }
+        }
+
+        public static void RemoveDuplicatesNoSpace<T>(Node<T> head)
+              where T : IEquatable<T>
+        {
+            if (head == null)
+            {
+                throw new ArgumentNullException(nameof(head));
+            }
+
+            var inputHead = head;
             while (head != null)
             {
-                if (!nodes.Contains(head.Data))
+
+                var runner = inputHead;
+                var next = head.Next;
+                while (runner != next)
                 {
-                    nodes.Add(head.Data);
-                    var toInsert = new Node<T>(head.Data);
-                    // Case for first entry
-                    if (noDuplicates == null)
+                    if (runner.Data.Equals(head.Data))
                     {
-                        noDuplicates = toInsert;
+                        break;
                     }
-                    else
-                    {
-                        noDuplicates.Next = toInsert;
-                        noDuplicates = toInsert;
-                    }
+
+                    runner = runner.Next;
+                }
+
+                if (runner == next)
+                {
+                    head = head.Next.Next;
+                }
+                else
+                {
                     head = head.Next;
                 }
             }
-
-            return noDuplicates;
         }
     }
 }
