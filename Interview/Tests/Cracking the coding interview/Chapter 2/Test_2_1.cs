@@ -1,8 +1,6 @@
 ﻿namespace Tests.Cracking_the_coding_interview.Chapter_2
 {
     using System;
-    using System.Collections.Generic;
-    using System.Runtime.InteropServices;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Questions.Cracking_the_coding_interview.Chapter_2;
     using Questions.Data_structures;
@@ -77,7 +75,6 @@
             ListHelpers.ValidateLinkedListContent(expected, input);
             Question_2_1.RemoveDuplicatesNoSpace2(inputCopy2);
             ListHelpers.ValidateLinkedListContent(expected, input);
-
         }
     }
 }
