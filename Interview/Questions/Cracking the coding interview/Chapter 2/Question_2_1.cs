@@ -38,6 +38,8 @@
             }
         }
 
+        // Time: O(n^2)
+        // Space: O(1)
         public static void RemoveDuplicatesNoSpace2<T>(Node<T> head)
             where T : IEquatable<T>
         {
@@ -68,6 +70,8 @@
             }
         }
 
+        // Time: O(n^2)
+        // Space: O(1)
         public static void RemoveDuplicatesNoSpace<T>(Node<T> head)
               where T : IEquatable<T>
         {
