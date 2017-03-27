@@ -47,14 +47,14 @@
             }
 
             var inputHead = head;
-            while (head != null)
+            var prev = head;
+            var next = head.Next;
+            while (next != null)
             {
-
                 var runner = inputHead;
-                var next = head.Next;
                 while (runner != next)
                 {
-                    if (runner.Data.Equals(head.Data))
+                    if (runner.Data.Equals(next.Data))
                     {
                         break;
                     }
@@ -64,11 +64,13 @@
 
                 if (runner == next)
                 {
-                    head = head.Next.Next;
+                    prev = next;
+                    next = next.Next;
                 }
                 else
                 {
-                    head = head.Next;
+                    prev.Next = next.Next;
+                    next = next.Next;
                 }
             }
         }
