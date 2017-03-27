@@ -70,10 +70,14 @@
             where T : IEquatable<T>
         {
             var inputCopy = ListHelpers.CloneList(input);
+            var inputCopy2 = ListHelpers.CloneList(input);
             Question_2_1.RemoveDuplicates(inputCopy);
             ListHelpers.ValidateLinkedListContent(expected, inputCopy);
             Question_2_1.RemoveDuplicatesNoSpace(input);
             ListHelpers.ValidateLinkedListContent(expected, input);
-        } 
+            Question_2_1.RemoveDuplicatesNoSpace2(inputCopy2);
+            ListHelpers.ValidateLinkedListContent(expected, input);
+
+        }
     }
 }

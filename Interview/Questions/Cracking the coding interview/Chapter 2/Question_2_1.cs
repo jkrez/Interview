@@ -38,6 +38,36 @@
             }
         }
 
+        public static void RemoveDuplicatesNoSpace2<T>(Node<T> head)
+            where T : IEquatable<T>
+        {
+            if (head == null)
+            {
+                throw new ArgumentNullException(nameof(head));
+            }
+
+            while (head != null)
+            {
+                var prev = head;
+                var next = head.Next;
+                while (next != null)
+                {
+                    if (next.Data.Equals(prev.Data))
+                    {
+                        prev.Next = next.Next;
+                        next = next.Next;
+                    }
+                    else
+                    {
+                        prev = next;
+                        next = next.Next;
+                    }
+                }
+
+                head = head.Next;
+            }
+        }
+
         public static void RemoveDuplicatesNoSpace<T>(Node<T> head)
               where T : IEquatable<T>
         {
