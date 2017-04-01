@@ -51,6 +51,7 @@
     <Compile Include="Cracking the coding interview\Chapter 1\Question_1_9.cs" />
     <Compile Include="Cracking the coding interview\Chapter 2\Question_2_1.cs" />
     <Compile Include="Cracking the coding interview\Chapter 2\Question_2_2.cs" />
+    <Compile Include="Cracking the coding interview\Chapter 2\Question_2_3.cs" />
     <Compile Include="Data structures\Node.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="Extra\AtLeastOneDuplicate.cs" />
