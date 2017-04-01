@@ -64,5 +64,12 @@
             Assert.IsNull(expected);
             Assert.IsNull(actual);
         }
+
+        public static void ValidateLinkedListContent<T>(Node<T> expected, params T[] items)
+            where T : IEquatable<T>
+        {
+            ValidateLinkedListContent(expected, CreateLinkedList(items));
+        }
+
     }
 }
