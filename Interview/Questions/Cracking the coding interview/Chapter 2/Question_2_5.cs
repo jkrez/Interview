@@ -24,8 +24,7 @@
     /// </summary>
     public class Question_2_5
     {
-        public static Node<T> SumLists<T>(Node<T> l1, Node<T> l2)
-            where T : IEquatable<T>
+        public static Node<Digit> SumLists(Node<Digit> l1, Node<Digit> l2)
         {
             if (l1 == null)
             {
@@ -37,13 +36,32 @@
                 throw new ArgumentNullException(nameof(l2));
             }
 
-            Node<T> result = new Node<T>(T);
-            while (l1 != null & l2 != null)
+            Node<Digit> resultHead = null;
+            Node<Digit> resultLast = null;
+            bool carryOver = false;
+            while (l1 != null || l2 != null)
             {
-                l1 = l1.Next;
+                int nextDigit = l1?.Data + l2?.Data + (carryOver ? 1 : 0);
+                carryOver = nextDigit > 9;
+                nextDigit = nextDigit % 10;
+                var newNode = new Node<Digit>(new Digit(nextDigit));
+
+                if (resultHead == null)
+                {
+                    resultHead = newNode;
+                    resultLast = newNode;
+                }
+                else
+                {
+                    resultLast.Next = newNode;
+                    resultLast = resultLast.Next;
+                }
+
+                l1 = l1?.Next;
+                l2 = l2?.Next;
             }
 
-            return result;
+            return resultHead;
         }
     }
 }
