@@ -14,6 +14,8 @@
     /// </summary>
     public class Question_2_3
     {
+        // Space: O(1)
+        // Time: O(n)
         public static void RemoveMiddleNode<T>(Node<T> node)
             where T : IEquatable<T>
         {

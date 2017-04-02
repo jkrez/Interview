@@ -17,6 +17,8 @@
     /// </summary>
     public class Question_2_4
     {
+        // Space: O(1)
+        // Time: O(n)
         public static void PartitionList<T>(Node<T> head, T dataPartition)
             where T : IEquatable<T>, IComparable<T>
         {
