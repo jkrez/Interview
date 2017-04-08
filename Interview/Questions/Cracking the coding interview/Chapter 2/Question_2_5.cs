@@ -71,12 +71,12 @@
         // Time: O(n)
         public static Node<Digit> SumLists(Node<Digit> l1, Node<Digit> l2)
         {
-            var reversedList1 = ReverseListIterative(l1);
-            var reversedList2 = ReverseListIterative(l2);
+            var reversedList1 = ReverseList(l1);
+            var reversedList2 = ReverseList(l2);
             return SumListsReversed(reversedList1, reversedList2);
         }
 
-        private static Node<T> ReverseListIterative<T>(Node<T> head)
+        public static Node<T> ReverseList<T>(Node<T> head)
             where T : IEquatable<T>
         {
             if (head == null)
@@ -97,7 +97,7 @@
             return prev;
         }
 
-        private static Node<T> ReverseList<T>(Node<T> head)
+        private static Node<T> ReverseListRecursive<T>(Node<T> head)
             where T : IEquatable<T>
         {
             if (head == null)
@@ -110,7 +110,7 @@
                 return head;
             }
 
-            var rest = ReverseList<T>(head.Next);
+            var rest = ReverseListRecursive<T>(head.Next);
             head.Next.Next = head;
             head.Next = null;
             return rest;
