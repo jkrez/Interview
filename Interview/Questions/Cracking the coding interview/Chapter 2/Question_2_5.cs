@@ -24,7 +24,10 @@
     /// </summary>
     public class Question_2_5
     {
-        public static Node<Digit> SumLists(Node<Digit> l1, Node<Digit> l2)
+
+        // Space: O(n)
+        // Time: O(n)
+        public static Node<Digit> SumListsReversed(Node<Digit> l1, Node<Digit> l2)
         {
             if (l1 == null)
             {
@@ -62,6 +65,55 @@
             }
 
             return resultHead;
+        }
+
+        // Space: O(n)
+        // Time: O(n)
+        public static Node<Digit> SumLists(Node<Digit> l1, Node<Digit> l2)
+        {
+            var reversedList1 = ReverseListIterative(l1);
+            var reversedList2 = ReverseListIterative(l2);
+            return SumListsReversed(reversedList1, reversedList2);
+        }
+
+        private static Node<T> ReverseListIterative<T>(Node<T> head)
+            where T : IEquatable<T>
+        {
+            if (head == null)
+            {
+                return null;
+            }
+
+            Node<T> prev = null;
+            var cur = head;
+            while (cur != null)
+            {
+                var temp = cur.Next;
+                cur.Next = prev;
+                prev = cur;
+                cur = temp;
+            }
+
+            return prev;
+        }
+
+        private static Node<T> ReverseList<T>(Node<T> head)
+            where T : IEquatable<T>
+        {
+            if (head == null)
+            {
+                return null;
+            }
+
+            if (head.Next == null)
+            {
+                return head;
+            }
+
+            var rest = ReverseList<T>(head.Next);
+            head.Next.Next = head;
+            head.Next = null;
+            return rest;
         }
     }
 }

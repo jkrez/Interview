@@ -20,6 +20,8 @@
         public void Question_2_5_InvalidCases()
         {
             var node = new Node<Digit>(new Digit(1));
+            TestHelpers.AssertExceptionThrown(() => Question_2_5.SumListsReversed(null, node), typeof(ArgumentNullException));
+            TestHelpers.AssertExceptionThrown(() => Question_2_5.SumListsReversed(node, null), typeof(ArgumentNullException));
             TestHelpers.AssertExceptionThrown(() => Question_2_5.SumLists(null, node), typeof(ArgumentNullException));
             TestHelpers.AssertExceptionThrown(() => Question_2_5.SumLists(node, null), typeof(ArgumentNullException));
         }
@@ -36,11 +38,16 @@
 
         private static void Validate(int num1, int num2)
         {
-            var numberAsList1 = CreateDigitList(num1, reversed: true);
-            var numberAsList2 = CreateDigitList(num2, reversed: true);
+            var numberAsReversedList1 = CreateDigitList(num1, reversed: true);
+            var numberAsReversedList2 = CreateDigitList(num2, reversed: true);
             var expected = CreateDigitList(num1 + num2, reversed: true);
-            var result = Question_2_5.SumLists(numberAsList1, numberAsList2);
+            var result = Question_2_5.SumListsReversed(numberAsReversedList1, numberAsReversedList2);
             ListHelpers.ValidateLinkedListContent(expected, result);
+
+            var numberAsList1 = CreateDigitList(num1, reversed: false);
+            var numberAsList2 = CreateDigitList(num2, reversed: false);
+            var result2 = Question_2_5.SumLists(numberAsList1, numberAsList2);
+            ListHelpers.ValidateLinkedListContent(expected, result2);
         }
 
         private static Node<Digit> CreateDigitList(int num, bool reversed = false)
