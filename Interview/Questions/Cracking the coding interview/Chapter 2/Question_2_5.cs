@@ -39,7 +39,7 @@
             Node<Digit> resultHead = null;
             Node<Digit> resultLast = null;
             bool carryOver = false;
-            while (l1 != null || l2 != null)
+            while (l1 != null || l2 != null || carryOver)
             {
                 int nextDigit = l1?.Data + l2?.Data + (carryOver ? 1 : 0);
                 carryOver = nextDigit > 9;

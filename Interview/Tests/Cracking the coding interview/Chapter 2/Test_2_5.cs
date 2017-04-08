@@ -13,7 +13,7 @@
         [TestMethod]
         public void Question_2_5_BasicCases()
         {
-            ValidateReversed(617, 295);
+            Validate(617, 295);
         }
 
         [TestMethod]
@@ -27,10 +27,14 @@
         [TestMethod]
         public void Question_2_5_EdgeCases()
         {
-            
+            Validate(1, 1000);
+            Validate(1, 999);
+            Validate(99999, 9);
+            Validate(9, 9);
+            Validate(0, 0);
         }
 
-        private static void ValidateReversed(int num1, int num2)
+        private static void Validate(int num1, int num2)
         {
             var numberAsList1 = CreateDigitList(num1, reversed: true);
             var numberAsList2 = CreateDigitList(num2, reversed: true);
