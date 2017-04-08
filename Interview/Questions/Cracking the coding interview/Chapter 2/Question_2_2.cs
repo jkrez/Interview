@@ -24,20 +24,14 @@
                 throw new ArgumentOutOfRangeException(nameof(k));
             }
 
-            var count = 0;
-            var runner = head;
-            while (runner != null)
-            {
-                count++;
-                runner = runner.Next;
-            }
+            var count = GetListLength(head);
 
             if (k >= count)
             {
                 throw new ArgumentOutOfRangeException("List is shorter than k");
             }
 
-            runner = head;
+            var runner = head;
             for (var i = 1; i < (count - k); i++)
             {
                 runner = runner.Next;
@@ -45,5 +39,18 @@
 
             return runner.Data;
         }
+
+        public static int GetListLength<T>(Node<T> head)
+            where T : IEquatable<T>
+        {
+            var count = 0;
+            while (head != null)
+            {
+                count++;
+                head = head.Next;
+            }
+
+            return count;
+        } 
     }
 }

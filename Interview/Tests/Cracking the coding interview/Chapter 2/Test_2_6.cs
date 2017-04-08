@@ -48,6 +48,9 @@
         {
             var result = Question_2_6.IsPalindrome(head);
             Assert.AreEqual(expected, result);
+
+            result = Question_2_6.IsPalindromeRecursive(head);
+            Assert.AreEqual(expected, result);
         }
     }
 }
