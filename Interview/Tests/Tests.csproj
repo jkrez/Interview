@@ -69,6 +69,7 @@
     <Compile Include="Cracking the coding interview\Chapter 2\Test_2_6.cs" />
     <Compile Include="Cracking the coding interview\Chapter 2\Test_2_7.cs" />
     <Compile Include="Cracking the coding interview\Chapter 2\Test_2_8.cs" />
+    <Compile Include="Cracking the coding interview\Chapter 3\Test_3_2.cs" />
     <Compile Include="ListHelpers.cs" />
     <Compile Include="MatrixHelpers.cs" />
     <Compile Include="TestHelpers.cs" />
@@ -90,6 +91,7 @@
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
   </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
