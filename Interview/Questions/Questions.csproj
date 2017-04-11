@@ -61,6 +61,7 @@
     <Compile Include="Cracking the coding interview\Chapter 3\Question_3_3.cs" />
     <Compile Include="Cracking the coding interview\Chapter 3\Question_3_4.cs" />
     <Compile Include="Cracking the coding interview\Chapter 3\Question_3_5.cs" />
+    <Compile Include="Cracking the coding interview\Chapter 3\Question_3_6.cs" />
     <Compile Include="Data structures\Digit.cs" />
     <Compile Include="Data structures\Node.cs" />
     <Compile Include="Extensions.cs" />

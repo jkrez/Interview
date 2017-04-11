@@ -73,6 +73,7 @@
     <Compile Include="Cracking the coding interview\Chapter 3\Test_3_3.cs" />
     <Compile Include="Cracking the coding interview\Chapter 3\Test_3_4.cs" />
     <Compile Include="Cracking the coding interview\Chapter 3\Test_3_5.cs" />
+    <Compile Include="Cracking the coding interview\Chapter 3\Test_3_6.cs" />
     <Compile Include="ListHelpers.cs" />
     <Compile Include="MatrixHelpers.cs" />
     <Compile Include="TestHelpers.cs" />
