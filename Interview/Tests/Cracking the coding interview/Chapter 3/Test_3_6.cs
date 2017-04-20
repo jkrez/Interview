@@ -34,7 +34,6 @@
             DequeueAndValidateDogs(shelter, 5, 6);
         }
 
-
         [TestMethod]
         public void Question_3_6_InterleavedAnimalTest()
         {
