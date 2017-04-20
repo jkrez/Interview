@@ -29,6 +29,15 @@
             this.Validate(root1, root4, false);
         }
 
+        [TestMethod]
+        public void InvalidInputTest()
+        {
+            var tree = new GraphNode<int>(0, null);
+
+            TestHelpers.AssertExceptionThrown(() => { Question_4_1.AreConnectedBFS(null, tree); }, typeof(ArgumentNullException));
+            TestHelpers.AssertExceptionThrown(() => { Question_4_1.AreConnectedBFS(tree, null); }, typeof(ArgumentNullException));
+        }
+
         private void Validate<T>(GraphNode<T> node1, GraphNode<T> node2, bool expected)
             where T : IEquatable<T>
         {
