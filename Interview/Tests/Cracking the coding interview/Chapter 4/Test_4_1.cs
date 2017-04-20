@@ -13,20 +13,23 @@
         {
             var node1 = new GraphNode<int>(0);
             var node2 = new GraphNode<int>(0);
-            this.Validate(node1, node2, true);
+            this.Validate(node1, node2, true, true);
 
             node2 = new GraphNode<int>(2);
-            this.Validate(node1, node2, false);
+            this.Validate(node1, node2, false, false);
 
             var root1 = GraphHelpers.CreateGraph(0, 1, 2, 3);
             var root2 = GraphHelpers.CreateGraph(4, 5, 6, 7);
             var root3 = GraphHelpers.CreateGraph(8, root1, root2);
-            this.Validate(root1, root2, false);
-            this.Validate(root1, root3, false);
+            this.Validate(root1, root2, false, false);
+            this.Validate(root1, root3, false, true);
 
             var root4 = GraphHelpers.CreateGraph(9, root1, root3);
-            this.Validate(root4, root3, true);
-            this.Validate(root1, root4, false);
+            this.Validate(root4, root3, true, true);
+            this.Validate(root1, root4, false, true);
+            this.Validate(root1, root3, false, true);
+            this.Validate(root3, root1, true, true);
+            this.Validate(root2, root1, false, false);
         }
 
         [TestMethod]
@@ -38,11 +41,13 @@
             TestHelpers.AssertExceptionThrown(() => { Question_4_1.AreConnectedBFS(tree, null); }, typeof(ArgumentNullException));
         }
 
-        private void Validate<T>(GraphNode<T> node1, GraphNode<T> node2, bool expected)
+        private void Validate<T>(GraphNode<T> node1, GraphNode<T> node2, bool expected, bool expectedBiDirectional)
             where T : IEquatable<T>
         {
             var result = Question_4_1.AreConnectedBFS(node1, node2);
             Assert.AreEqual(expected, result, "Result did not equal expected.");
+            result = Question_4_1.AreConnectedBiDirectionalBFS(node1, node2);
+            Assert.AreEqual(expectedBiDirectional, result, "BiDirectional result was not expected.");
         }
     }
 }

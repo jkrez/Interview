@@ -70,6 +70,7 @@
     <Compile Include="Extensions.cs" />
     <Compile Include="Extra\AtLeastOneDuplicate.cs" />
     <Compile Include="Extra\ReverseString.cs" />
+    <Compile Include="LeetCode\TwoSum.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
