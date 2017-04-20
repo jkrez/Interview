@@ -30,7 +30,7 @@
         }
 
         [TestMethod]
-        public void InvalidInputTest()
+        public void Question_4_1_InvalidCases()
         {
             var tree = new GraphNode<int>(0, null);
 
