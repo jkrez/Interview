@@ -75,6 +75,7 @@
     <Compile Include="Cracking the coding interview\Chapter 3\Test_3_5.cs" />
     <Compile Include="Cracking the coding interview\Chapter 3\Test_3_6.cs" />
     <Compile Include="Cracking the coding interview\Chapter 4\Test_4_1.cs" />
+    <Compile Include="Cracking the coding interview\Chapter 4\Test_4_2.cs" />
     <Compile Include="GraphHelpers.cs" />
     <Compile Include="ListHelpers.cs" />
     <Compile Include="MatrixHelpers.cs" />
@@ -82,6 +83,7 @@
     <Compile Include="Extra\Test_AtLeastOneDuplicate.cs" />
     <Compile Include="Extra\Test_ReverseString.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TreeHelpers.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Questions\Questions.csproj">
