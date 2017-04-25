@@ -1,6 +1,7 @@
 ﻿namespace Tests
 {
     using System;
+    using System.Collections.Generic;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Questions.Data_structures;
 
@@ -70,5 +71,9 @@
             ValidateLinkedListContent(expected, CreateLinkedList(items));
         }
 
+        public static List<T> CreateList<T>(params T[] values)
+        {
+            return new List<T>(values);
+        }
     }
 }
