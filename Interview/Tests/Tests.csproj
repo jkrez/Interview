@@ -79,6 +79,7 @@
     <Compile Include="Cracking the coding interview\Chapter 4\Test_4_3.cs" />
     <Compile Include="Cracking the coding interview\Chapter 4\Test_4_4.cs" />
     <Compile Include="Cracking the coding interview\Chapter 4\Test_4_5.cs" />
+    <Compile Include="Cracking the coding interview\Chapter 4\Test_4_6..cs" />
     <Compile Include="GraphHelpers.cs" />
     <Compile Include="ListHelpers.cs" />
     <Compile Include="MatrixHelpers.cs" />

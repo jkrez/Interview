@@ -13,6 +13,8 @@
 
         public BinaryTreeNode<T> Right { get; set; }
 
+        public BinaryTreeNode<T> Parent { get; set; }
+
         public BinaryTreeNode(T data)
         {
             this.Data = data;
@@ -22,9 +24,21 @@
             : this(data)
         {
             this.Left = left;
+            if (this.Left != null)
+            {
+                this.Left.Parent = this;
+            }
+
             this.Right = right;
+            if (this.Right != null)
+            {
+                this.Right.Parent = this;
+            }
         }
 
-        private string debuggerString => "Left: " + this.Left?.Data.ToString() + " Right: " + this.Right?.Data.ToString();
+        private string debuggerString =>
+            "Left: " + this.Left?.Data.ToString() +
+            " Right: " + this.Right?.Data.ToString() +
+            " Parent: " + this.Parent?.Data.ToString();
     }
 }
