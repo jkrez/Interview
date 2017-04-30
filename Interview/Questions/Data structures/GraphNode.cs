@@ -9,6 +9,7 @@
     public class GraphNode<T>
         where T : IEquatable<T>
     {
+        public int DependencyCount;
         public T Data;
         public GraphNode<T>[] Children;
 
@@ -21,6 +22,15 @@
         {
             this.Data = data;
             this.Children = children?.ToArray() ?? new GraphNode<T>[0];
+            this.DependencyCount = this.Children.Length;
+        }
+
+        public void AddDependency(GraphNode<T> node)
+        {
+            var newChildren = this.Children.ToList();
+            newChildren.Add(node);
+            this.Children = newChildren.ToArray();
+            this.DependencyCount++;
         }
 
         private string DebuggerString
