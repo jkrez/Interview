@@ -1,8 +1,8 @@
-﻿namespace Questions
+﻿namespace Questions.Extensions
 {
     using System.Linq;
 
-    public static class Extensions
+    public static class Common
     {
         public static bool ContentsEqual<T>(this T[,] m1, T[,] m2)
         {

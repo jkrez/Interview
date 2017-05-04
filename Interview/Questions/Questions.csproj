@@ -69,12 +69,14 @@
     <Compile Include="Cracking the coding interview\Chapter 4\Question_4_5.cs" />
     <Compile Include="Cracking the coding interview\Chapter 4\Question_4_6.cs" />
     <Compile Include="Cracking the coding interview\Chapter 4\Question_4_7.cs" />
+    <Compile Include="Cracking the coding interview\Chapter 4\Question_4_8.cs" />
     <Compile Include="Data structures\BinaryTreeNode.cs" />
     <Compile Include="Data structures\Digit.cs" />
     <Compile Include="Data structures\Graph.cs" />
     <Compile Include="Data structures\GraphNode.cs" />
     <Compile Include="Data structures\Node.cs" />
-    <Compile Include="Extensions.cs" />
+    <Compile Include="Extensions\BinaryTreeNodeExtensions.cs" />
+    <Compile Include="Extensions\Common.cs" />
     <Compile Include="Extra\AtLeastOneDuplicate.cs" />
     <Compile Include="Extra\ReverseString.cs" />
     <Compile Include="LeetCode\TwoSum.cs" />
