@@ -13,9 +13,32 @@
     /// </summary>
     public class Question_4_9
     {
-
-        // Time: O(?)
+        // We can use the master's theorem to derive the complexity of this recursive algorithm
+        // from the generic form:
+        //      T(n) = a T(n/b) + f(n) where a exists in natural numbers, 1 < b exists in real numbers.
+        //
+        // The recurrent relation from this problem takes the form:
+        //      T(n) = 2 T(n/2) + 2n
+        //
+        // This statisfies case 2 of the master's theorem which states:
+        //      f(n) = BigTheta(n^c * log^k(n)) where c = log b (a)
+        //
+        // In our case:
+        //      a = 2, b = 2, c = 1, f(n) = 2n
+        //      f(n) = BigTheta(n^c log^k(n)) where c = 1, k = 0
+        //
+        // Case 2 condition, log b (a) = c, is satisfied. Substituting in:
+        //      log b (a) = log 2 (2) = 1
+        //
+        // Thus follows from the master's theorem that the relation T(n) must be bound by:
+        //      TT(n) = BigTheta(n^(log b (a) * log^(k+1)(n))
+        //            = BigTheta(n^(log 2 (2)) * log^(0 + 1)(n))
+        //            = BigTheta(n^1 * log(n)
+        //            = BigTheta(n log (n))
+        //
+        // Time: O(n(log(n))
         // Space: O(n^2)
+        // Unfortunately .net does not support O(1) linked list concatenation.
         public static List<List<T>> PossibleArrays<T>(BinaryTreeNode<T> node)
             where T : IEquatable<T>
         {
