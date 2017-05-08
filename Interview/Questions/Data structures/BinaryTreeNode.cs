@@ -15,6 +15,11 @@
 
         public BinaryTreeNode<T> Parent { get; set; }
 
+        /// <summary>
+        /// Inclusive Node count.
+        /// </summary>
+        public int NodeCount { get; set; }
+
         public BinaryTreeNode(T data)
         {
             this.Data = data;
