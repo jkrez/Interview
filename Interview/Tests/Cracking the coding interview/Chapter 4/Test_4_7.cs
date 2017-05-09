@@ -16,24 +16,26 @@
             // Depends (a, b) means project b depends on a being built first.
 
             // Base edge cases.
-            Validate(CreateProjectList(), /* dependencies */ CreateDependencies());
+            Validate(CreateProjectList(), /* dependencies */ CreateDependencies(), CreateProjectList(), CreateProjectList());
 
-            // Two project orderings
-            Validate(CreateProjectList("a", "b"), CreateDependencies(), "a", "b");
-            Validate(CreateProjectList("a", "b"), CreateDependencies("a", "b"), "a", "b");
-            Validate(CreateProjectList("a", "b"), CreateDependencies("b", "a"), "b", "a");
+            // Two project orderings.
+            Validate(CreateProjectList("a", "b"), CreateDependencies(), CreateProjectList("a", "b"), CreateProjectList("a", "b"));
+            Validate(CreateProjectList("a", "b"), CreateDependencies("a", "b"), CreateProjectList("a", "b"), CreateProjectList("a", "b"));
+            Validate(CreateProjectList("a", "b"), CreateDependencies("b", "a"), CreateProjectList("b", "a"), CreateProjectList("b", "a"));
+
             // Simple cycle.
-            Validate(CreateProjectList("a", "b"), CreateDependencies("b", "a", "a", "b"));
+            Validate(CreateProjectList("a", "b"), CreateDependencies("b", "a", "a", "b"), null, null);
 
             // Three project tests.
-            Validate(CreateProjectList("a", "b", "c"), /* dependencies */ CreateDependencies(), "a", "b", "c");
-            Validate(CreateProjectList("a", "b", "c"), CreateDependencies("a", "b"), "a", "c", "b");
-            Validate(CreateProjectList("a", "b", "c"), CreateDependencies("b", "a"), "b", "c", "a");
-            Validate(CreateProjectList("a", "b", "c"), CreateDependencies("a", "b", "b", "c"), "a", "b", "c");
-            Validate(CreateProjectList("a", "b", "c"), CreateDependencies("b", "a", "c", "b"), "c", "b", "a");
-            Validate(CreateProjectList("a", "b", "c"), CreateDependencies("b", "a", "c", "a"), "b", "c", "a");
+            Validate(CreateProjectList("a", "b", "c"), /* dependencies */ CreateDependencies(), CreateProjectList("a", "b", "c"), CreateProjectList("a", "b", "c"));
+            Validate(CreateProjectList("a", "b", "c"), CreateDependencies("a", "b"), CreateProjectList("a", "c", "b"), CreateProjectList("a", "b", "c"));
+            Validate(CreateProjectList("a", "b", "c"), CreateDependencies("b", "a"), CreateProjectList("b", "c", "a"), CreateProjectList("b", "a", "c"));
+            Validate(CreateProjectList("a", "b", "c"), CreateDependencies("a", "b", "b", "c"), CreateProjectList("a", "b", "c"), CreateProjectList("a", "b", "c"));
+            Validate(CreateProjectList("a", "b", "c"), CreateDependencies("b", "a", "c", "b"), CreateProjectList("c", "b", "a"), CreateProjectList("c", "b", "a"));
+            Validate(CreateProjectList("a", "b", "c"), CreateDependencies("b", "a", "c", "a"), CreateProjectList("c", "b", "a"), CreateProjectList("b", "c", "a"));
+
             // Complex cycle.
-            Validate(CreateProjectList("a", "b", "c"), CreateDependencies("b", "a", "c", "b", "a", "c"));
+            Validate(CreateProjectList("a", "b", "c"), CreateDependencies("b", "a", "c", "b", "a", "c"), null, null);
         }
 
         [TestMethod]
@@ -44,11 +46,28 @@
             TestHelpers.AssertExceptionThrown(() => Question_4_7.FindBuildOrder(CreateProjectList("a"), CreateDependencies("a", "b")), typeof(ArgumentOutOfRangeException));
         }
 
-        private static void Validate(List<string> projects, Dictionary<string, string> dependencies, params string[] expectedOrder)
+        private static void Validate(List<string> projects, Dictionary<string, string> dependencies, List<string> expectedOrder, List<string> expectedDFSOrder)
         {
-            var result = Question_4_7.FindBuildOrder(projects, dependencies);
-            Assert.IsNotNull(result);
-            var expectedProjectsOrder = CreateProjectList(expectedOrder);
+           // var result = Question_4_7.FindBuildOrder(projects, dependencies);
+            //ValidateResult(result, projects, expectedOrder);
+            var result2 = Question_4_7.FindBuildOrderDFS(projects, dependencies);
+            ValidateResult(result2, projects, expectedDFSOrder);
+        }
+
+        private static void ValidateResult(List<string> result, List<string> projects, List<string> expectedProjectsOrder)
+        {
+                if (expectedProjectsOrder != null)
+                {
+                    // No order needed since empty project list.
+                    Assert.IsNotNull(result);
+                }
+                else
+                {
+                    // Error occurred or no ordering.
+                    Assert.IsNull(result);
+                    return;
+                }
+
             Assert.IsTrue(expectedProjectsOrder.SequenceEqual(result));
         }
 

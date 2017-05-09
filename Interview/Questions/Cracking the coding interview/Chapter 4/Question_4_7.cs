@@ -23,9 +23,28 @@
         // Space: O(p + d), p is # of projects, d # of dependencies
         public static List<string> FindBuildOrder(List<string> projects, Dictionary<string, string> dependencies)
         {
+            ValidateInput(projects, dependencies);
+            var graph = BuildGraph(projects, dependencies);
+            return FindProjectOrder(graph);
+        }
+
+        public static List<string> FindBuildOrderDFS(List<string> projects, Dictionary<string, string> dependencies)
+        {
+            ValidateInput(projects, dependencies);
+            var graph = BuildGraph(projects, dependencies);
+            return FindProjectOrderDFS(graph);
+        }
+
+        private static void ValidateInput(List<string> projects, Dictionary<string, string> dependencies)
+        {
             if (projects == null)
             {
                 throw new ArgumentNullException(nameof(projects));
+            }
+
+            if (dependencies == null)
+            {
+                throw new ArgumentNullException();
             }
 
             foreach (var dependency in dependencies)
@@ -36,9 +55,6 @@
                     throw new ArgumentOutOfRangeException(nameof(dependencies));
                 }
             }
-
-            var graph = BuildGraph(projects, dependencies);
-            return FindProjectOrder(graph);
         }
 
         private static Graph<string> BuildGraph(List<string> projects, Dictionary<string, string> dependencies)
@@ -78,7 +94,7 @@
                 if (projectOrder.Count == nextAddIndex)
                 {
                     // No valid project order (cycle) because no projects added.
-                    return new List<string>();
+                    return null;
                 }
 
                 for (int i = nextAddIndex; i < projectOrder.Count; i++)
@@ -98,6 +114,48 @@
             }
 
             return projectOrder;
+        }
+
+        private static List<string> FindProjectOrderDFS(Graph<string> graph)
+        {
+            var order = new List<string>();
+            foreach (var node in graph.Nodes)
+            {
+                if (node.Value.State == GraphNode<string>.NodeState.NotBuilt)
+                {
+                    if (!AddDfsOrder(node.Value, order))
+                    {
+                        return null;
+                    }
+                }
+            }
+
+            return order;
+        }
+
+        private static bool AddDfsOrder(GraphNode<string> node, List<string> projectOrder)
+        {
+            if (node.State == GraphNode<string>.NodeState.Building)
+            {
+                return false;
+            }
+
+            if (node.State == GraphNode<string>.NodeState.NotBuilt)
+            {
+                node.State = GraphNode<string>.NodeState.Building;
+                foreach (var child in node.Children)
+                {
+                    if (!AddDfsOrder(child, projectOrder))
+                    {
+                        return false;
+                    }
+                }
+
+                node.State = GraphNode<string>.NodeState.BuildComplete;
+                projectOrder.Add(node.Data);
+            }
+
+            return true;
         }
     }
 }
