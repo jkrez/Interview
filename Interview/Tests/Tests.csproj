@@ -88,12 +88,14 @@
     <Compile Include="Cracking the coding interview\Chapter 4\Test_4_9.cs" />
     <Compile Include="Cracking the coding interview\Chapter 5\Test_5_1.cs" />
     <Compile Include="Cracking the coding interview\Chapter 5\Test_5_2.cs" />
+    <Compile Include="Cracking the coding interview\Chapter 5\Test_5_3.cs" />
+    <Compile Include="Data structure helpers\BinaryHelpers.cs" />
     <Compile Include="Data structure helpers\GraphHelpers.cs" />
     <Compile Include="Data structure helpers\ListHelpers.cs" />
     <Compile Include="Data structure helpers\MatrixHelpers.cs" />
     <Compile Include="TestHelpers.cs" />
-    <Compile Include="Extra\Test_AtLeastOneDuplicate.cs" />
-    <Compile Include="Extra\Test_ReverseString.cs" />
+    <Compile Include="Extra Questions\Test_AtLeastOneDuplicate.cs" />
+    <Compile Include="Extra Questions\Test_ReverseString.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Data structure helpers\TreeHelpers.cs" />
   </ItemGroup>

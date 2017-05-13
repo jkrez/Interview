@@ -76,6 +76,7 @@
     <Compile Include="Cracking the coding interview\Chapter 4\Question_4_8.cs" />
     <Compile Include="Cracking the coding interview\Chapter 5\Question_5_2.cs" />
     <Compile Include="Cracking the coding interview\Chapter 5\Question_5_1.cs" />
+    <Compile Include="Cracking the coding interview\Chapter 5\Question_5_3.cs" />
     <Compile Include="Data structures\BinaryTreeNode.cs" />
     <Compile Include="Data structures\Digit.cs" />
     <Compile Include="Data structures\Graph.cs" />

@@ -1,6 +1,7 @@
 ﻿namespace Tests.Cracking_the_coding_interview.Chapter_5
 {
     using System;
+    using Data_structure_helpers;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Questions.Cracking_the_coding_interview.Chapter_5;
 
@@ -10,28 +11,28 @@
         [TestMethod]
         public void Question_5_1_BasicCases()
         {
-            int n = IntFromBinary("11111111");
-            int m = IntFromBinary("101");
+            int n = BinaryHelpers.IntFromBinary("11111111");
+            int m = BinaryHelpers.IntFromBinary("101");
             int i = 2;
             int j = 4;
-            int expected = IntFromBinary("11110111");
+            int expected = BinaryHelpers.IntFromBinary("11110111");
 
             Validate(expected, n, m, i, j);
 
             i = 0;
             j = 2;
-            expected = IntFromBinary("11111101");
+            expected = BinaryHelpers.IntFromBinary("11111101");
             Validate(expected, n, m, i, j);
 
-            n = IntFromBinary("10101010");
-            m = IntFromBinary("1000");
+            n = BinaryHelpers.IntFromBinary("10101010");
+            m = BinaryHelpers.IntFromBinary("1000");
             j = 3;
-            expected = IntFromBinary("10101000");
+            expected = BinaryHelpers.IntFromBinary("10101000");
             Validate(expected, n, m, i, j);
 
             i = 4;
             j = 7;
-            expected = IntFromBinary("10001010");
+            expected = BinaryHelpers.IntFromBinary("10001010");
             Validate(expected, n, m, i, j);
         }
 
@@ -39,11 +40,6 @@
         {
             var result = Question_5_1.InsertBits(n, m, i, j);
             Assert.AreEqual(expected, result);
-        }
-
-        private static int IntFromBinary(string s)
-        {
-            return Convert.ToInt32(s, 2);
         }
     }
 }
