@@ -13,6 +13,11 @@
         public T Data;
         public GraphNode<T>[] Children;
 
+        // Added for 4.7
+        public enum NodeState { NotBuilt, Building, BuildComplete }
+
+        public NodeState State;
+
         public GraphNode(T data)
             : this(data, null)
         {
