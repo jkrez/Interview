@@ -1,8 +1,8 @@
 ﻿namespace Tests.Cracking_the_coding_interview.Chapter_5
 {
-    using Data_structure_helpers;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Questions.Cracking_the_coding_interview.Chapter_5;
+    using Questions.Data_structures;
 
     [TestClass]
     public class Test_5_3
