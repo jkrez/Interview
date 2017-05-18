@@ -93,6 +93,7 @@
     <Compile Include="Cracking the coding interview\Chapter 5\Test_5_4.cs" />
     <Compile Include="Cracking the coding interview\Chapter 5\Test_5_6.cs" />
     <Compile Include="Cracking the coding interview\Chapter 5\Test_5_7.cs" />
+    <Compile Include="Cracking the coding interview\Chapter 8\Test_8_1.cs" />
     <Compile Include="Data structure helpers\GraphHelpers.cs" />
     <Compile Include="Data structure helpers\ListHelpers.cs" />
     <Compile Include="Data structure helpers\MatrixHelpers.cs" />
