@@ -22,7 +22,6 @@
             };
             Validate(false, maze);
 
-
             // Large maze validation.
             maze = new bool[10, 10]
             {
@@ -53,10 +52,9 @@
                 { true, true, true, true, true, true, true, true, true, true },
             };
             Validate(false, maze);
-
         }
 
-        private void Validate(bool path, bool[,] maze)
+        private static void Validate(bool path, bool[,] maze)
         {
             var result = Question_8_2.GetPath(maze);
             Assert.AreEqual(path, result != null);
