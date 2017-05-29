@@ -19,16 +19,9 @@
                 return new List<string>();
             }
 
-            var set = new HashSet<char>();
-            foreach (var c in input)
-            {
-                set.Add(c);
-            }
-
             var result = new List<string>();
-            var list = set.ToList();
-            result.Add(string.Empty + list[0]);
-            for (int i = 1; i < list.Count; i++)
+            result.Add(string.Empty + input[0]);
+            for (int i = 1; i < input.Length; i++)
             {
                 var temp = new List<string>();
                 foreach (var str in result)
@@ -36,7 +29,7 @@
                     for (int j = 0; j <= str.Length; j++)
                     {
                         temp.Add(str.Substring(0,j) +
-                                 list[i] +
+                                 input[i] +
                                  str.Substring(j));
                     }
                 }

@@ -1,5 +1,6 @@
 ﻿namespace Tests.Cracking_the_coding_interview.Chapter_8
 {
+    using System;
     using System.CodeDom;
     using System.Collections.Generic;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -12,31 +13,23 @@
         public void Question_8_7_BasicCases()
         {
             var s = "";
-            Validate(s);
+            Validate(s, Question_8_7.PermutationsWithoutDuplicates);
             s = "a";
-            Validate(s);
+            Validate(s, Question_8_7.PermutationsWithoutDuplicates);
+            s = "ab";
+            Validate(s, Question_8_7.PermutationsWithoutDuplicates);
             s = "abc";
-            Validate(s);
-            s = "aa";
-            Validate(s);
-            s = "aaaa";
-            Validate(s);
-            s = "aaabababaaabbbbb";
-            Validate(s);
-            s = "abcabcabc";
-            Validate(s);
-            s = "abcdabcdbababadcc";
-            Validate(s);
+            Validate(s, Question_8_7.PermutationsWithoutDuplicates);
             s = "abcd";
-            Validate(s);
+            Validate(s, Question_8_7.PermutationsWithoutDuplicates);
             s = "abcdef";
-            Validate(s);
+            Validate(s, Question_8_7.PermutationsWithoutDuplicates);
         }
 
-        private void Validate(string input)
+        public static void Validate(string input, Func<string, List<string>> permutationAction)
         {
             var permutations = new HashSet<string>();
-            var result = Question_8_7.PermutationsWithoutDuplicates(input);
+            var result = permutationAction(input);
             var unique = RemoveDuplicates(input);
             var expectedCount = CountPerm(unique.Length);
             Assert.AreEqual(expectedCount, result.Count);
