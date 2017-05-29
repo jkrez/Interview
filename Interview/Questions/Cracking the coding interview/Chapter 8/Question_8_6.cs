@@ -1,5 +1,6 @@
 ﻿namespace Questions.Cracking_the_coding_interview.Chapter_8
 {
+    using System;
     using System.Collections.Generic;
 
     /// <summary>
@@ -51,6 +52,11 @@
 
         private static void Move(Stack<int> src, Stack<int> dest)
         {
+            if (!CanMoveSingleDisk(src, dest))
+            {
+                throw new InvalidOperationException("Cannot move disk here");
+            }
+
             dest.Push(src.Peek());
             src.Pop();
         }
