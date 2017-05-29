@@ -1,8 +1,6 @@
 ﻿namespace Questions.Cracking_the_coding_interview.Chapter_8
 {
     using System.Collections.Generic;
-    using System.Linq;
-    using System.Runtime.InteropServices;
 
     /// <summary>
     /// Permutations without Dups: Write a method to compute all permutations of a string of unique

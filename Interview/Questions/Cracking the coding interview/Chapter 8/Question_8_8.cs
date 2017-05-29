@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Questions.Cracking_the_coding_interview.Chapter_8
+﻿namespace Questions.Cracking_the_coding_interview.Chapter_8
 {
+    using System.Collections.Generic;
+    using System.Linq;
+
     /// <summary>
     /// Permutations with Dups: Write a method to compute all permutations of a string whose characters
     /// are not necessarily unique.The list of permutations should not have duplicates.
