@@ -11,7 +11,7 @@
     public class Question_8_7
     {
         // Time: O(n^2 * n!)
-        // Space: O(n^2 * n!)
+        // Space: O(n!)
         public static List<string> PermutationsWithoutDuplicates(string input)
         {
             if (string.IsNullOrEmpty(input))
