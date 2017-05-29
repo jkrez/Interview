@@ -90,6 +90,7 @@
     <Compile Include="Cracking the coding interview\Chapter 8\Question_8_6.cs" />
     <Compile Include="Cracking the coding interview\Chapter 8\Question_8_7.cs" />
     <Compile Include="Cracking the coding interview\Chapter 8\Question_8_8.cs" />
+    <Compile Include="Cracking the coding interview\Chapter 8\Question_8_9.cs" />
     <Compile Include="Data structures\BinaryHelpers.cs" />
     <Compile Include="Data structures\BinaryTreeNode.cs" />
     <Compile Include="Data structures\Digit.cs" />
