@@ -108,6 +108,7 @@
     <Compile Include="Data structure helpers\GraphHelpers.cs" />
     <Compile Include="Data structure helpers\ListHelpers.cs" />
     <Compile Include="Data structure helpers\MatrixHelpers.cs" />
+    <Compile Include="Extra Questions\RobotPathsCount.cs" />
     <Compile Include="TestHelpers.cs" />
     <Compile Include="Extra Questions\Test_AtLeastOneDuplicate.cs" />
     <Compile Include="Extra Questions\Test_ReverseString.cs" />
