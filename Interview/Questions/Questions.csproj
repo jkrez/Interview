@@ -105,8 +105,9 @@
     <Compile Include="Extensions\Common.cs" />
     <Compile Include="Extra Questions\AtLeastOneDuplicate.cs" />
     <Compile Include="Extra Questions\ReverseString.cs" />
-    <Compile Include="Leet Code\TwoSum.cs" />
+    <Compile Include="Extra Questions\Leet Code\TwoSum.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Extra Questions\Qualtrics\RobotProblem.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
