@@ -44,4 +44,5 @@ _ReSharper*/
 # Uncomment if necessary however generally it will be regenerated when needed
 #!**/packages/repositories.config
 
-
+# pycharm ce / intellij
+.DS_Store
