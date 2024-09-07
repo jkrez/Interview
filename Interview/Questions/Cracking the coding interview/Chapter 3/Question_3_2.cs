@@ -13,7 +13,7 @@
     public class MinStack<T>
         where T : IComparable<T>
     {
-        // A better soloution would be where this grows dynamically.
+        // A better solution would be where this grows dynamically.
         private const int maxItems = 100;
 
         private readonly T[] stackItems;
