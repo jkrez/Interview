@@ -50,3 +50,4 @@ _ReSharper*/
 # ignore .pyc files and other compiled files
 *.pyc
 *.pyo
+**/__pycache__/*
