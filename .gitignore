@@ -46,3 +46,7 @@ _ReSharper*/
 
 # pycharm ce / intellij
 .DS_Store
+
+# ignore .pyc files and other compiled files
+*.pyc
+*.pyo
