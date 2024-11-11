@@ -26,6 +26,9 @@ class Solution:
 
         return ops
 
+    #
+    # Using a dict instead.
+    #
     @staticmethod
     def max_operations2(nums: List[int], k: int) -> int:
         num_set: Dict[int, int] = {}
@@ -47,17 +50,24 @@ class Solution:
     #
     # Find a contiguous subarray whose length is equal to k that has the maximum average value and return this value.
     # Any answer with a calculation error less than 10-5 will be accepted.
+    #
+    # Brainstorm:
+    # - Brute force: Iterate the array looking for a sequence with the max average.
     @staticmethod
-    def max_operations2(nums: List[int], k: int) -> int:
-        average: int = 0
+    def findMaxAverage(nums: List[int], k: int) -> float:
+        sum: int = 0
         if len(nums) < k:
             return 0
 
-        for i in range(len(k)):
-            average += nums[i] / k
+        for i in range(k):
+            sum += nums[i]
 
-        max_avg: int = average
+        max_sum: int = sum
         left: int = 0
         for i in range(k, len(nums)):
             # remove
-            average -= nums[i - k]
+            sum -= nums[i - k]
+            sum += nums[i]
+            max_sum = max(max_sum, sum)
+
+        return max_sum / k
