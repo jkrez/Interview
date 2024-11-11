@@ -13,7 +13,8 @@ class Solution:
         longest_common_divisor_len: int = 0
         while (
             longest_common_divisor_len < shorter_len
-            and longest[longest_common_divisor_len] == shorter[longest_common_divisor_len]
+            and longest[longest_common_divisor_len]
+            == shorter[longest_common_divisor_len]
         ):
             longest_common_divisor_len += 1
 
