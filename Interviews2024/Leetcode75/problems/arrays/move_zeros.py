@@ -32,21 +32,21 @@ class Solution:
         step 1
             - input: [0, 1]
             - right = left = 0
-            - right == 0, swap  
+            - right == 0, swap
         step 2
             - input [0, 1]
             - right = 1
             - left = 1
-        
+
         algo debugging
         step 1
         - 0, 0, 1
         - right = 0
         - left = 0
         = swap
-        
+
         0, 0, 1
-        
+
         """
         for right in range(len(nums)):
             if nums[right] != 0:
