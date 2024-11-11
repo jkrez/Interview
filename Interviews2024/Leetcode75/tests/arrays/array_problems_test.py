@@ -19,3 +19,13 @@ def test_max_avg_subarray():
 def test_max_vowels():
     assert Solution.maxVowels("hello", 3) == 1
     assert Solution.maxVowels("hello", 4) == 2
+
+
+def test_max_consecutive_zeros_and_ones():
+    assert Solution.maxLongestOnes([0], 1) == 1
+    assert Solution.maxLongestOnes([0], 0) == 0
+    assert Solution.maxLongestOnes([1, 0, 0, 1], 1) == 2
+    assert Solution.maxLongestOnes([1, 0, 1], 1) == 3
+    assert Solution.maxLongestOnes([0, 0, 0], 1) == 1
+    assert Solution.maxLongestOnes([0, 0, 1, 1, 1, 0, 0], 0) == 3
+    assert Solution.maxLongestOnes([1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0], 0) == 4

@@ -100,3 +100,66 @@ class Solution:
             max_sum = max(max_sum, sum)
 
         return max_sum
+
+    """
+    Given a binary array nums and an integer k, return the maximum number of consecutive 1's in the array if you can flip at most k 0's.
+    
+    Brainstorm: 
+    - sliding window approach, start at begining of the array and expand until you hit max 0's then move through the 
+        array expanding / contracting with at most k zeros. 
+        
+        
+    Examples:
+    - k = 1 array = 1001, answer: 2
+    - k = 1 array = 101, answer: 3
+    - k = 1 array = 000, answer: 1
+    
+    - k = 0 array = 010, answer: 1
+
+    
+    """
+
+    @staticmethod
+    def maxLongestOnes(nums: List[int], k: int) -> int:
+        answer: int = 0
+        left: int = 0
+        right: int = 0
+
+        zero_count: int = 0
+        while right < len(nums):
+            # expand right
+            while right < len(nums) and (zero_count < k or nums[right] != 0):
+                if nums[right] == 0:
+                    zero_count += 1
+                right += 1
+
+            # capture max length
+            answer = max(answer, right - left)
+
+            # contract left. If k = 0, we need to move left over until we hit a zero.
+            if k == 0:
+                right += 1
+                left = right
+            else:
+                while zero_count >= k:
+                    if nums[left] == 0:
+                        zero_count -= 1
+                    left += 1
+
+        return answer
+
+    @staticmethod
+    def longestOnes2(self, nums: List[int], k: int) -> int:
+        left: int = 0
+        right: int = 0
+        for right in range(len(nums)):
+            # If we included a zero in the window we reduce the value of k.
+            # Since k is the maximum zeros allowed in a window.
+            k -= 1 - nums[right]
+            # A negative k denotes we have consumed all allowed flips and window has
+            # more than allowed zeros, thus increment left pointer by 1 to keep the window size same.
+            if k < 0:
+                # If the left element to be thrown out is zero we increase k.
+                k += 1 - nums[left]
+                left += 1
+        return right - left + 1
