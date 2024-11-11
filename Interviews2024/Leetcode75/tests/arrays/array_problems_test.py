@@ -14,3 +14,8 @@ def test_max_ops_2():
 def test_max_avg_subarray():
     assert Solution.findMaxAverage([1, 12, -5, -6, 50, 3], 4) == 12.75
     assert Solution.findMaxAverage([5], 1) == 5.0
+
+
+def test_max_vowels():
+    assert Solution.maxVowels("hello", 3) == 1
+    assert Solution.maxVowels("hello", 4) == 2

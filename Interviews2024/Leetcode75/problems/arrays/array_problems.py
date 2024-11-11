@@ -71,3 +71,32 @@ class Solution:
             max_sum = max(max_sum, sum)
 
         return max_sum / k
+
+    """
+    Given a string s and an integer k, return the maximum number of vowel letters in any substring of s with length k.
+
+    Vowel letters in English are 'a', 'e', 'i', 'o', and 'u'.
+    """
+
+    @staticmethod
+    def maxVowels(s: str, k: int) -> int:
+        sum: int = 0
+        max_sum: int = 0
+        vowels: frozenset[str] = frozenset({"a", "e", "i", "o", "u"})
+        if k > len(s):
+            return 0
+        for i in range(k):
+            if s[i].lower() in vowels:
+                sum += 1
+
+        max_sum = sum
+        for i in range(k, len(s)):
+            if s[i - k].lower() in vowels:
+                sum -= 1
+
+            if s[i].lower() in vowels:
+                sum += 1
+
+            max_sum = max(max_sum, sum)
+
+        return max_sum
